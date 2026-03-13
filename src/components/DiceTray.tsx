@@ -47,7 +47,7 @@ export const DiceTray = () => {
     };
 
     return (
-        <div className="h-20 sm:h-28 bg-[#4c5c68] w-full shadow-[0_0_15px_rgba(0,0,0,0.5)] z-10 flex items-center justify-between px-2 sm:px-6 md:px-12 border-y-2 sm:border-y-4 border-[#2f3e46] box-border relative">
+        <div className="h-20 sm:h-28 landscape:h-16 landscape:sm:h-20 bg-[#4c5c68] w-full shadow-[0_0_15px_rgba(0,0,0,0.5)] z-10 flex items-center justify-between px-2 sm:px-6 md:px-12 border-y-2 sm:border-y-4 border-[#2f3e46] box-border relative">
 
             {/* Player 2 Controls */}
             <div className="flex flex-col gap-1 sm:gap-2 items-center">
@@ -55,19 +55,19 @@ export const DiceTray = () => {
                 {currentPhase === 'ROLL' && activePlayerIndex === 1 ? (
                     <div
                         onClick={handleRoll}
-                        className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-green-500 flex flex-col items-center justify-center border-2 sm:border-4 border-green-300 shadow-lg transform portrait:rotate-180 hover:scale-105 active:scale-95 cursor-pointer animate-bounce z-20"
+                        className="w-12 h-12 sm:w-16 sm:h-16 portrait:md:w-20 portrait:md:h-20 portrait:lg:w-24 portrait:lg:h-24 rounded-full bg-green-500 flex flex-col items-center justify-center border-2 sm:border-4 border-green-300 shadow-lg transform portrait:rotate-180 hover:scale-105 active:scale-95 cursor-pointer animate-bounce z-20"
                     >
-                        <span className="font-bold text-xs sm:text-sm md:text-base lg:text-xl uppercase tracking-wider text-white">Roll</span>
+                        <span className="font-bold text-xs sm:text-sm portrait:md:text-base portrait:lg:text-xl uppercase tracking-wider text-white">Roll</span>
                     </div>
                 ) : (
                     <div
                         onClick={() => handleReady(1)}
-                        className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full flex flex-col items-center justify-center border-2 sm:border-4 shadow-lg cursor-pointer transform portrait:rotate-180 hover:scale-105 active:scale-95 transition-all
+                        className={`w-12 h-12 sm:w-16 sm:h-16 portrait:md:w-20 portrait:md:h-20 portrait:lg:w-24 portrait:lg:h-24 rounded-full flex flex-col items-center justify-center border-2 sm:border-4 shadow-lg cursor-pointer transform portrait:rotate-180 hover:scale-105 active:scale-95 transition-all
                   ${state.playersReady[1] ? 'bg-green-600 border-green-400 text-white' : 'bg-amber-500 border-amber-300 text-white animate-pulse shadow-[0_0_15px_rgba(245,158,11,0.6)]'}
                 `}
                     >
-                        <span className="font-bold text-[10px] sm:text-sm md:text-base lg:text-xl uppercase">Ready</span>
-                        {state.playersReady[1] && <span className="text-xl md:text-3xl leading-none mt-1">✓</span>}
+                        <span className="font-bold text-[10px] sm:text-sm portrait:md:text-base portrait:lg:text-xl uppercase">Ready</span>
+                        {state.playersReady[1] && <span className="text-xl portrait:md:text-3xl leading-none mt-1">✓</span>}
                     </div>
                 )}
             </div>
@@ -98,19 +98,19 @@ export const DiceTray = () => {
                 {currentPhase === 'ROLL' && activePlayerIndex === 0 ? (
                     <div
                         onClick={handleRoll}
-                        className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-green-500 flex flex-col items-center justify-center border-2 sm:border-4 border-green-300 shadow-lg transform hover:scale-105 active:scale-95 cursor-pointer animate-bounce"
+                        className="w-12 h-12 sm:w-16 sm:h-16 portrait:md:w-20 portrait:md:h-20 portrait:lg:w-24 portrait:lg:h-24 rounded-full bg-green-500 flex flex-col items-center justify-center border-2 sm:border-4 border-green-300 shadow-lg transform hover:scale-105 active:scale-95 cursor-pointer animate-bounce"
                     >
-                        <span className="font-bold text-xs sm:text-sm md:text-base lg:text-xl uppercase tracking-wider text-white">Roll</span>
+                        <span className="font-bold text-xs sm:text-sm portrait:md:text-base portrait:lg:text-xl uppercase tracking-wider text-white">Roll</span>
                     </div>
                 ) : (
                     <div
                         onClick={() => handleReady(0)}
-                        className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full flex flex-col items-center justify-center border-2 sm:border-4 shadow-lg cursor-pointer transform hover:scale-105 active:scale-95 transition-all
+                        className={`w-12 h-12 sm:w-16 sm:h-16 portrait:md:w-20 portrait:md:h-20 portrait:lg:w-24 portrait:lg:h-24 rounded-full flex flex-col items-center justify-center border-2 sm:border-4 shadow-lg cursor-pointer transform hover:scale-105 active:scale-95 transition-all
               ${state.playersReady[0] ? 'bg-green-600 border-green-400 text-white' : 'bg-amber-500 border-amber-300 text-white animate-pulse shadow-[0_0_15px_rgba(245,158,11,0.6)]'}
             `}
                     >
-                        <span className="font-bold text-[10px] sm:text-sm md:text-base lg:text-xl uppercase tracking-wider">Ready</span>
-                        {state.playersReady[0] && <span className="text-xl md:text-3xl leading-none mt-1">✓</span>}
+                        <span className="font-bold text-[10px] sm:text-sm portrait:md:text-base portrait:lg:text-xl uppercase tracking-wider">Ready</span>
+                        {state.playersReady[0] && <span className="text-xl portrait:md:text-3xl leading-none mt-1">✓</span>}
                     </div>
                 )}
             </div>
@@ -131,7 +131,7 @@ const dieColors: Record<string, string> = {
 
 const Die = ({ value, color, disabled = false, rolling = false, delay = '' }: { value: number, color: string, disabled?: boolean, rolling?: boolean, delay?: string }) => {
     return (
-        <div className={`w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-md sm:rounded-xl md:rounded-2xl shadow-md border-b-2 sm:border-b-4 md:border-b-8 flex items-center justify-center font-black text-2xl sm:text-5xl md:text-6xl lg:text-7xl relative transition-transform duration-75
+        <div className={`w-10 h-10 sm:w-16 sm:h-16 portrait:md:w-20 portrait:md:h-20 portrait:lg:w-24 portrait:lg:h-24 rounded-md sm:rounded-xl portrait:md:rounded-2xl shadow-md border-b-2 sm:border-b-4 portrait:md:border-b-8 flex items-center justify-center font-black text-2xl sm:text-5xl portrait:md:text-6xl portrait:lg:text-7xl relative transition-transform duration-75
       ${dieColors[color]}
       ${disabled ? 'opacity-30 grayscale' : ''}
       ${rolling ? `animate-ping scale-110 ${delay}` : ''}
