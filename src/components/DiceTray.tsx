@@ -120,7 +120,7 @@ const dieColors: Record<string, string> = {
 
 const Die = ({ value, color, disabled = false, rolling = false, delay = '' }: { value: number, color: string, disabled?: boolean, rolling?: boolean, delay?: string }) => {
     return (
-        <div className={`w-8 h-8 sm:w-14 sm:h-14 rounded-md sm:rounded-xl shadow-md border-b-2 sm:border-b-4 flex items-center justify-center font-black text-xl sm:text-4xl relative transition-transform duration-75
+        <div className={`w-10 h-10 sm:w-16 sm:h-16 rounded-md sm:rounded-xl shadow-md border-b-2 sm:border-b-4 flex items-center justify-center font-black text-2xl sm:text-5xl relative transition-transform duration-75
       ${dieColors[color]}
       ${disabled ? 'opacity-30 grayscale' : ''}
       ${rolling ? `animate-ping scale-110 ${delay}` : ''}

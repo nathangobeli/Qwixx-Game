@@ -12,5 +12,5 @@ body {
   margin: 0;
   overscroll-behavior: none; /* Prevent bounce scroll */
   user-select: none; /* Improve touch feel */
-  background-color: #f0f0f0;
+  background-color: #3a454d;
 }

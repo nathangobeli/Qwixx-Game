@@ -97,9 +97,9 @@ function App() {
   return (
     <div className="h-full w-full bg-[#3a454d] text-white flex flex-col font-sans fixed inset-0">
       {/* Top Board (Player 2 / CPU) - Rotated 180 degrees */}
-      <div className="flex-1 w-full flex justify-center items-center relative p-1 overflow-hidden min-h-0">
+      <div className="flex-1 w-full flex justify-center items-center relative p-1 pb-[max(0.25rem,env(safe-area-inset-top))] overflow-hidden min-h-0">
         <div className="w-full h-full flex justify-center items-center transform rotate-180">
-          <PlayerBoard playerIndex={1} />
+          <PlayerBoard playerIndex={1} inverted />
         </div>
       </div>
 
@@ -109,7 +109,7 @@ function App() {
       </div>
 
       {/* Bottom Board (Player 1) */}
-      <div className="flex-1 w-full flex justify-center items-center relative p-1 overflow-hidden min-h-0">
+      <div className="flex-1 w-full flex justify-center items-center relative p-1 pb-[max(0.25rem,env(safe-area-inset-bottom))] overflow-hidden min-h-0">
         <PlayerBoard playerIndex={0} />
       </div>
     </div>

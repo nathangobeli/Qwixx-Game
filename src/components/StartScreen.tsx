@@ -74,7 +74,7 @@ export const StartScreen = () => {
     }
 
     return (
-        <div className="h-full w-full bg-[#3a454d] text-white flex flex-col items-center justify-center font-sans p-4 relative overflow-hidden">
+        <div className="h-full w-full bg-[#3a454d] text-white flex flex-col items-center justify-center font-sans p-4 pt-[max(1rem,env(safe-area-inset-top))] pb-[max(1rem,env(safe-area-inset-bottom))] relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-10 left-10 w-32 h-32 bg-red-500/20 rounded-xl rotate-12 blur-md"></div>
             <div className="absolute bottom-10 right-10 w-32 h-32 bg-blue-500/20 rounded-xl -rotate-12 blur-md"></div>
