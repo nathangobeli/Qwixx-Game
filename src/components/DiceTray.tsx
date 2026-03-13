@@ -62,12 +62,11 @@ export const DiceTray = () => {
                 ) : (
                     <div
                         onClick={() => handleReady(1)}
-                        className={`w-12 h-12 sm:w-16 sm:h-16 portrait:md:w-20 portrait:md:h-20 portrait:lg:w-24 portrait:lg:h-24 rounded-full flex flex-col items-center justify-center border-2 sm:border-4 shadow-lg cursor-pointer transform portrait:rotate-180 hover:scale-105 active:scale-95 transition-all
-                  ${state.playersReady[1] ? 'bg-green-600 border-green-400 text-white' : 'bg-amber-500 border-amber-300 text-white animate-pulse shadow-[0_0_15px_rgba(245,158,11,0.6)]'}
+                        className={`w-12 h-12 sm:w-16 sm:h-16 portrait:md:w-20 portrait:md:h-20 portrait:lg:w-24 portrait:lg:h-24 rounded-full flex flex-col items-center justify-center border-2 sm:border-4 shadow-lg cursor-pointer transform portrait:rotate-180 transition-all
+                  ${state.playersReady[1] ? 'bg-green-600 border-green-400 text-white shadow-[0_0_15px_rgba(34,197,94,0.6)]' : 'bg-amber-500 border-amber-300 text-white animate-pulse shadow-[0_0_15px_rgba(245,158,11,0.6)] hover:scale-105 active:scale-95'}
                 `}
                     >
                         <span className="font-bold text-[10px] sm:text-sm portrait:md:text-base portrait:lg:text-xl uppercase">Ready</span>
-                        {state.playersReady[1] && <span className="text-xl portrait:md:text-3xl leading-none mt-1">✓</span>}
                     </div>
                 )}
             </div>
@@ -105,12 +104,11 @@ export const DiceTray = () => {
                 ) : (
                     <div
                         onClick={() => handleReady(0)}
-                        className={`w-12 h-12 sm:w-16 sm:h-16 portrait:md:w-20 portrait:md:h-20 portrait:lg:w-24 portrait:lg:h-24 rounded-full flex flex-col items-center justify-center border-2 sm:border-4 shadow-lg cursor-pointer transform hover:scale-105 active:scale-95 transition-all
-              ${state.playersReady[0] ? 'bg-green-600 border-green-400 text-white' : 'bg-amber-500 border-amber-300 text-white animate-pulse shadow-[0_0_15px_rgba(245,158,11,0.6)]'}
+                        className={`w-12 h-12 sm:w-16 sm:h-16 portrait:md:w-20 portrait:md:h-20 portrait:lg:w-24 portrait:lg:h-24 rounded-full flex flex-col items-center justify-center border-2 sm:border-4 shadow-lg cursor-pointer transform transition-all
+              ${state.playersReady[0] ? 'bg-green-600 border-green-400 text-white shadow-[0_0_15px_rgba(34,197,94,0.6)]' : 'bg-amber-500 border-amber-300 text-white animate-pulse shadow-[0_0_15px_rgba(245,158,11,0.6)] hover:scale-105 active:scale-95'}
             `}
                     >
                         <span className="font-bold text-[10px] sm:text-sm portrait:md:text-base portrait:lg:text-xl uppercase tracking-wider">Ready</span>
-                        {state.playersReady[0] && <span className="text-xl portrait:md:text-3xl leading-none mt-1">✓</span>}
                     </div>
                 )}
             </div>
