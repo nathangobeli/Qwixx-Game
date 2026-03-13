@@ -47,7 +47,7 @@ export const DiceTray = () => {
     };
 
     return (
-        <div className="h-16 sm:h-24 bg-[#4c5c68] w-full shadow-[0_0_15px_rgba(0,0,0,0.5)] z-10 flex items-center justify-between px-2 sm:px-6 md:px-12 border-y-2 sm:border-y-4 border-[#2f3e46] box-border relative">
+        <div className="h-20 sm:h-28 bg-[#4c5c68] w-full shadow-[0_0_15px_rgba(0,0,0,0.5)] z-10 flex items-center justify-between px-2 sm:px-6 md:px-12 border-y-2 sm:border-y-4 border-[#2f3e46] box-border relative">
 
             {/* Player 2 Controls */}
             <div className="flex flex-col gap-2 items-center">
@@ -120,7 +120,7 @@ const dieColors: Record<string, string> = {
 
 const Die = ({ value, color, disabled = false, rolling = false, delay = '' }: { value: number, color: string, disabled?: boolean, rolling?: boolean, delay?: string }) => {
     return (
-        <div className={`w-6 h-6 sm:w-10 sm:h-10 rounded-md sm:rounded-lg shadow-md border-b-[1px] sm:border-b-2 flex items-center justify-center font-bold text-base sm:text-2xl relative transition-transform duration-75
+        <div className={`w-8 h-8 sm:w-14 sm:h-14 rounded-md sm:rounded-xl shadow-md border-b-2 sm:border-b-4 flex items-center justify-center font-black text-xl sm:text-4xl relative transition-transform duration-75
       ${dieColors[color]}
       ${disabled ? 'opacity-30 grayscale' : ''}
       ${rolling ? `animate-ping scale-110 ${delay}` : ''}
