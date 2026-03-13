@@ -70,7 +70,7 @@ export const PlayerBoard = ({ playerIndex, inverted = false }: PlayerBoardProps)
             </div>
 
             {/* Rows */}
-            <div className="flex flex-col gap-1 sm:gap-2">
+            <div className="flex flex-col gap-1 sm:gap-2 flex-1 min-h-0 mt-1 sm:mt-2">
                 <Row playerIndex={playerIndex} color="red" rowState={player.rows.red} />
                 <Row playerIndex={playerIndex} color="yellow" rowState={player.rows.yellow} />
                 <Row playerIndex={playerIndex} color="green" rowState={player.rows.green} />
