@@ -97,21 +97,31 @@ function App() {
   return (
     <div className="h-full w-full bg-[#3a454d] text-white flex justify-center text-center font-sans fixed inset-0">
       <div className="w-full h-full max-w-5xl flex flex-col shadow-2xl bg-[#323c43] relative">
-      {/* Top Board (Player 2 / CPU) - Rotated 180 degrees */}
-      <div className="flex-1 w-full flex justify-center items-center relative p-2 md:p-6 pb-[max(0.25rem,env(safe-area-inset-top))] overflow-hidden min-h-0">
+      {/* Portrait: Top Board (Player 2 / CPU) - Rotated 180 degrees */}
+      <div className="flex-1 w-full portrait:flex landscape:hidden justify-center items-center relative p-2 portrait:pt-[max(2.5rem,env(safe-area-inset-top))] overflow-hidden min-h-0">
         <div className="w-full h-full flex justify-center items-center transform rotate-180">
           <PlayerBoard playerIndex={1} />
         </div>
       </div>
 
-      {/* Center Console (Dice Tray & Controls) */}
-      <div className="shrink-0 z-10">
+      {/* Center Console (Dice Tray & Controls) -> Moves to Top in Landscape */}
+      <div className="shrink-0 z-10 w-full landscape:pt-[max(0.5rem,env(safe-area-inset-top))]">
         <DiceTray />
       </div>
 
-      {/* Bottom Board (Player 1) */}
-      <div className="flex-1 w-full flex justify-center items-center relative p-2 md:p-6 pb-[max(0.25rem,env(safe-area-inset-bottom))] overflow-hidden min-h-0">
+      {/* Portrait: Bottom Board (Player 1) */}
+      <div className="flex-1 w-full portrait:flex landscape:hidden justify-center items-center relative p-2 portrait:pb-[max(2rem,env(safe-area-inset-bottom))] overflow-hidden min-h-0">
         <PlayerBoard playerIndex={0} />
+      </div>
+
+      {/* Landscape / PC: Side-by-Side Boards */}
+      <div className="hidden landscape:flex flex-row w-full flex-1 gap-4 lg:gap-8 p-4 lg:p-8 landscape:pb-[max(1.5rem,env(safe-area-inset-bottom))] overflow-hidden min-h-0 items-center justify-center">
+        <div className="flex-1 h-full flex justify-center items-center">
+          <PlayerBoard playerIndex={0} />
+        </div>
+        <div className="flex-1 h-full flex justify-center items-center">
+          <PlayerBoard playerIndex={1} />
+        </div>
       </div>
       </div>
     </div>
