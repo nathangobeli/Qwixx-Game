@@ -49,13 +49,6 @@ export const DiceTray = () => {
     return (
         <div className="h-20 sm:h-28 bg-[#4c5c68] w-full shadow-[0_0_15px_rgba(0,0,0,0.5)] z-10 flex items-center justify-between px-2 sm:px-6 md:px-12 border-y-2 sm:border-y-4 border-[#2f3e46] box-border relative">
 
-            <button
-                onClick={() => dispatch({ type: 'NAVIGATE_TO_MENU' })}
-                className="absolute left-[50%] top-[-2rem] transform -translate-x-1/2 -translate-y-[50%] bg-stone-700/80 text-white px-4 py-1.5 rounded-t-xl font-bold text-[10px] sm:text-xs tracking-widest shadow-lg border-x-2 border-t-2 border-stone-600/50 backdrop-blur-md uppercase z-50"
-            >
-                Pause / Menu
-            </button>
-
             {/* Player 2 Controls */}
             <div className="flex flex-col gap-1 sm:gap-2 items-center">
                 {currentPhase === 'ROLL' && activePlayerIndex === 1 ? (
@@ -82,7 +75,16 @@ export const DiceTray = () => {
             <div className={`flex bg-[#2f3e46]/80 p-1 sm:p-2 rounded-xl sm:rounded-2xl shadow-inner border border-[#1f282e]/50 gap-1 sm:gap-2 items-center transition-all ${isRolling ? 'scale-105' : ''}`}>
                 <Die value={isRolling ? rollDice() : dice.white1} color="white" rolling={isRolling} />
                 <Die value={isRolling ? rollDice() : dice.white2} color="white" rolling={isRolling} delay="delay-75" />
-                <div className="w-0.5 h-6 sm:h-8 bg-[#1f282e] rounded-full mx-0.5"></div> {/* Divider */}
+                
+                {/* Menu Button as Divider */}
+                <button
+                    onClick={() => dispatch({ type: 'NAVIGATE_TO_MENU' })}
+                    className="mx-0.5 sm:mx-1 bg-stone-700 hover:bg-stone-600 border border-stone-500 text-stone-300 hover:text-white rounded-md w-5 sm:w-8 h-12 sm:h-16 flex items-center justify-center font-bold text-[8px] sm:text-[10px] uppercase shadow-md active:scale-95 transition-transform"
+                    style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', letterSpacing: '1px' }}
+                >
+                    Menu
+                </button>
+
                 <Die value={isRolling ? rollDice() : dice.red} color="red" disabled={lockedColors.includes('red')} rolling={isRolling && !lockedColors.includes('red')} delay="delay-100" />
                 <Die value={isRolling ? rollDice() : dice.yellow} color="yellow" disabled={lockedColors.includes('yellow')} rolling={isRolling && !lockedColors.includes('yellow')} delay="delay-150" />
                 <Die value={isRolling ? rollDice() : dice.green} color="green" disabled={lockedColors.includes('green')} rolling={isRolling && !lockedColors.includes('green')} delay="delay-200" />
