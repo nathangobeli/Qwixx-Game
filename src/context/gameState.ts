@@ -259,6 +259,12 @@ export const gameReducer = (state: GameState, action: GameAction): GameState => 
         case 'END_GAME':
             return { ...state, currentPhase: 'GAME_OVER' };
 
+        case 'NAVIGATE_TO_MENU':
+            return { ...state, savedPhase: state.currentPhase, currentPhase: 'SETUP' };
+
+        case 'RESUME_GAME':
+            return { ...state, currentPhase: state.savedPhase || 'ROLL', savedPhase: undefined };
+
         case 'RESET_GAME':
             return initialGameState;
 

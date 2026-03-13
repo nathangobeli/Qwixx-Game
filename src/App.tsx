@@ -99,7 +99,7 @@ function App() {
       {/* Top Board (Player 2 / CPU) - Rotated 180 degrees */}
       <div className="flex-1 w-full flex justify-center items-center relative p-1 pb-[max(0.25rem,env(safe-area-inset-top))] overflow-hidden min-h-0">
         <div className="w-full h-full flex justify-center items-center transform rotate-180">
-          <PlayerBoard playerIndex={1} inverted />
+          <PlayerBoard playerIndex={1} />
         </div>
       </div>
 

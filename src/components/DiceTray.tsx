@@ -49,6 +49,13 @@ export const DiceTray = () => {
     return (
         <div className="h-20 sm:h-28 bg-[#4c5c68] w-full shadow-[0_0_15px_rgba(0,0,0,0.5)] z-10 flex items-center justify-between px-2 sm:px-6 md:px-12 border-y-2 sm:border-y-4 border-[#2f3e46] box-border relative">
 
+            <button
+                onClick={() => dispatch({ type: 'NAVIGATE_TO_MENU' })}
+                className="absolute left-[50%] top-[-2rem] transform -translate-x-1/2 -translate-y-[50%] bg-stone-700/80 text-white px-4 py-1.5 rounded-t-xl font-bold text-[10px] sm:text-xs tracking-widest shadow-lg border-x-2 border-t-2 border-stone-600/50 backdrop-blur-md uppercase z-50"
+            >
+                Pause / Menu
+            </button>
+
             {/* Player 2 Controls */}
             <div className="flex flex-col gap-2 items-center">
                 {currentPhase === 'ROLL' && activePlayerIndex === 1 ? (

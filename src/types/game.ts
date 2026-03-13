@@ -45,6 +45,7 @@ export interface GameState {
     };
     playersReady: boolean[];
     cpuDifficulty?: CpuDifficulty;
+    savedPhase?: GamePhase;
 }
 
 export type GameAction =
@@ -56,4 +57,6 @@ export type GameAction =
     | { type: 'PASS_TURN'; payload: { playerIndex: 0 | 1; actionPhase: 1 | 2 } }
     | { type: 'LOCK_COLOR'; payload: Color }
     | { type: 'END_GAME' }
-    | { type: 'RESET_GAME' };
+    | { type: 'RESET_GAME' }
+    | { type: 'NAVIGATE_TO_MENU' }
+    | { type: 'RESUME_GAME' };

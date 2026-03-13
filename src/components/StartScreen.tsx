@@ -3,7 +3,7 @@ import { useGame } from '../context/GameContext';
 import type { GameMode } from '../types/game';
 
 export const StartScreen = () => {
-    const { dispatch } = useGame();
+    const { state, dispatch } = useGame();
     const [p1Name, setP1Name] = useState('Player 1');
     const [p2Name, setP2Name] = useState('Player 2');
     const [mode, setMode] = useState<GameMode>('2P');
@@ -11,8 +11,13 @@ export const StartScreen = () => {
     const [showRules, setShowRules] = useState(false);
 
     const handleStart = () => {
+        if (hasSavedGame) {
+            if (!window.confirm("Are you sure you want to start a new game? Your paused game will be lost!")) return;
+        }
         dispatch({ type: 'START_GAME', payload: { mode, p1Name, p2Name, cpuDifficulty } });
     };
+
+    const hasSavedGame = state.rollCount > 0 && !!state.savedPhase;
 
     if (showRules) {
         return (
@@ -139,13 +144,30 @@ export const StartScreen = () => {
                         />
                     </div>
 
-                    <div className="pt-4 flex flex-col gap-4">
-                        <button
-                            onClick={handleStart}
-                            className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white font-black py-4 px-8 rounded-full text-2xl shadow-[0_0_20px_rgba(16,185,129,0.4)] transform hover:scale-105 active:scale-95 transition-all uppercase tracking-widest border-2 border-green-300"
-                        >
-                            Start Game
-                        </button>
+                    <div className="pt-4 flex flex-col gap-3 sm:gap-4">
+                        {hasSavedGame ? (
+                            <>
+                                <button
+                                    onClick={() => dispatch({ type: 'RESUME_GAME' })}
+                                    className="w-full bg-blue-500 hover:bg-blue-400 text-white font-black py-4 px-8 rounded-full text-xl sm:text-2xl shadow-[0_0_20px_rgba(59,130,246,0.5)] transform hover:scale-105 active:scale-95 transition-all uppercase tracking-widest border-2 border-blue-300"
+                                >
+                                    Resume Game
+                                </button>
+                                <button
+                                    onClick={handleStart}
+                                    className="w-full bg-stone-700 hover:bg-red-500 text-stone-300 hover:text-white font-bold py-3 px-8 rounded-full text-sm sm:text-lg shadow-md transform hover:scale-105 active:scale-95 transition-all uppercase tracking-wider border-2 border-stone-600 hover:border-red-400"
+                                >
+                                    Abandon & New Game
+                                </button>
+                            </>
+                        ) : (
+                            <button
+                                onClick={handleStart}
+                                className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white font-black py-4 px-8 rounded-full text-2xl shadow-[0_0_20px_rgba(16,185,129,0.4)] transform hover:scale-105 active:scale-95 transition-all uppercase tracking-widest border-2 border-green-300"
+                            >
+                                Start Game
+                            </button>
+                        )}
 
                         <button
                             onClick={() => setShowRules(true)}
