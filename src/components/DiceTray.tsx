@@ -50,8 +50,8 @@ export const DiceTray = () => {
         <div className="h-20 sm:h-28 landscape:h-16 landscape:sm:h-20 bg-[#4c5c68] w-full shadow-[0_0_15px_rgba(0,0,0,0.5)] z-10 flex items-center justify-between px-2 sm:px-6 md:px-12 border-y-2 sm:border-y-4 border-[#2f3e46] box-border relative">
 
             {/* Player 2 Controls */}
-            <div className="flex flex-col gap-1 sm:gap-2 items-center">
-                <span className="hidden landscape:block text-[8px] sm:text-xs font-bold text-stone-400 uppercase tracking-widest leading-none mt-1">{state.players[1].name}</span>
+            <div className="flex flex-col landscape:flex-row-reverse gap-1 sm:gap-2 items-center">
+                <span className="hidden landscape:block text-[8px] sm:text-xs font-bold text-stone-400 uppercase tracking-widest leading-none mt-1 landscape:mt-0 landscape:ml-2">{state.players[1].name}</span>
                 {currentPhase === 'ROLL' && activePlayerIndex === 1 ? (
                     <div
                         onClick={handleRoll}
@@ -93,8 +93,8 @@ export const DiceTray = () => {
             </div>
 
             {/* Player 1 Controls */}
-            <div className="flex flex-col gap-1 sm:gap-2 items-center">
-                <span className="hidden landscape:block text-[8px] sm:text-xs font-bold text-stone-400 uppercase tracking-widest leading-none mt-1">{state.players[0].name}</span>
+            <div className="flex flex-col landscape:flex-row gap-1 sm:gap-2 items-center">
+                <span className="hidden landscape:block text-[8px] sm:text-xs font-bold text-stone-400 uppercase tracking-widest leading-none mt-1 landscape:mt-0 landscape:mr-2">{state.players[0].name}</span>
                 {currentPhase === 'ROLL' && activePlayerIndex === 0 ? (
                     <div
                         onClick={handleRoll}
