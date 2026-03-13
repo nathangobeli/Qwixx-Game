@@ -51,17 +51,18 @@ export const DiceTray = () => {
 
             {/* Player 2 Controls */}
             <div className="flex flex-col gap-1 sm:gap-2 items-center">
+                <span className="hidden landscape:block text-[8px] sm:text-xs font-bold text-stone-400 uppercase tracking-widest leading-none mt-1">{state.players[1].name}</span>
                 {currentPhase === 'ROLL' && activePlayerIndex === 1 ? (
                     <div
                         onClick={handleRoll}
-                        className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-green-500 flex flex-col items-center justify-center border-2 sm:border-4 border-green-300 shadow-lg transform rotate-180 hover:scale-105 active:scale-95 cursor-pointer animate-bounce z-20"
+                        className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-green-500 flex flex-col items-center justify-center border-2 sm:border-4 border-green-300 shadow-lg transform portrait:rotate-180 hover:scale-105 active:scale-95 cursor-pointer animate-bounce z-20"
                     >
                         <span className="font-bold text-xs sm:text-sm md:text-base lg:text-xl uppercase tracking-wider text-white">Roll</span>
                     </div>
                 ) : (
                     <div
                         onClick={() => handleReady(1)}
-                        className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full flex flex-col items-center justify-center border-2 sm:border-4 shadow-lg cursor-pointer transform rotate-180 hover:scale-105 active:scale-95 transition-all
+                        className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full flex flex-col items-center justify-center border-2 sm:border-4 shadow-lg cursor-pointer transform portrait:rotate-180 hover:scale-105 active:scale-95 transition-all
                   ${state.playersReady[1] ? 'bg-green-600 border-green-400 text-white' : 'bg-amber-500 border-amber-300 text-white animate-pulse shadow-[0_0_15px_rgba(245,158,11,0.6)]'}
                 `}
                     >
@@ -93,6 +94,7 @@ export const DiceTray = () => {
 
             {/* Player 1 Controls */}
             <div className="flex flex-col gap-1 sm:gap-2 items-center">
+                <span className="hidden landscape:block text-[8px] sm:text-xs font-bold text-stone-400 uppercase tracking-widest leading-none mt-1">{state.players[0].name}</span>
                 {currentPhase === 'ROLL' && activePlayerIndex === 0 ? (
                     <div
                         onClick={handleRoll}

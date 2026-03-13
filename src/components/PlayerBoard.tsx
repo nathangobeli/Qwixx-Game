@@ -80,19 +80,19 @@ export const PlayerBoard = ({ playerIndex, inverted = false }: PlayerBoardProps)
             </div>
 
             {/* Footer Info (Scoring Legend - simplified) */}
-            <div className="mt-1 sm:mt-3 md:mt-4 text-[8px] sm:text-xs md:text-sm text-stone-500 font-bold flex justify-between px-2 sm:px-6 md:px-8 opacity-80">
-                <span>1x=1</span>
-                <span>2x=3</span>
-                <span>3x=6</span>
-                <span>4x=10</span>
-                <span>5x=15</span>
-                <span>6x=21</span>
-                <span>7x=28</span>
-                <span>8x=36</span>
-                <span>9x=45</span>
-                <span>10x=55</span>
-                <span>11x=66</span>
-                <span>12x=78</span>
+            <div className="mt-1 flex justify-between px-1 md:px-2 opacity-80" style={{ fontSize: 'clamp(0.4rem, 1.8cqi, 1.2rem)' }}>
+                <span className="text-stone-500 font-bold whitespace-nowrap">1x=1</span>
+                <span className="text-stone-500 font-bold whitespace-nowrap">2x=3</span>
+                <span className="text-stone-500 font-bold whitespace-nowrap hidden sm:inline">3x=6</span>
+                <span className="text-stone-500 font-bold whitespace-nowrap hidden sm:inline">4x=10</span>
+                <span className="text-stone-500 font-bold whitespace-nowrap hidden md:inline">5x=15</span>
+                <span className="text-stone-500 font-bold whitespace-nowrap hidden md:inline">6x=21</span>
+                <span className="text-stone-500 font-bold whitespace-nowrap hidden lg:inline">7x=28</span>
+                <span className="text-stone-500 font-bold whitespace-nowrap hidden lg:inline">8x=36</span>
+                <span className="text-stone-500 font-bold whitespace-nowrap hidden lg:inline">9x=45</span>
+                <span className="text-stone-500 font-bold whitespace-nowrap hidden xl:inline">10x=55</span>
+                <span className="text-stone-500 font-bold whitespace-nowrap hidden xl:inline">11x=66</span>
+                <span className="text-stone-500 font-bold whitespace-nowrap hidden xl:inline">12x=78</span>
             </div>
         </div>
     );
