@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-red-board: #e92e2b;
+  --color-yellow-board: #f1b31c;
+  --color-green-board: #009846;
+  --color-blue-board: #006eb6;
+  --color-board-bg: #e6e6e6;
+}
+
+body {
+  margin: 0;
+  overscroll-behavior: none; /* Prevent bounce scroll */
+  user-select: none; /* Improve touch feel */
+  background-color: #f0f0f0;
+}
