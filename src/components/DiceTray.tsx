@@ -57,23 +57,23 @@ export const DiceTray = () => {
             </button>
 
             {/* Player 2 Controls */}
-            <div className="flex flex-col gap-2 items-center">
+            <div className="flex flex-col gap-1 sm:gap-2 items-center">
                 {currentPhase === 'ROLL' && activePlayerIndex === 1 ? (
                     <div
                         onClick={handleRoll}
-                        className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-green-500 flex flex-col items-center justify-center border-2 sm:border-4 border-green-300 shadow-lg transform rotate-180 hover:scale-105 active:scale-95 cursor-pointer animate-bounce z-20"
+                        className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-green-500 flex flex-col items-center justify-center border-2 sm:border-4 border-green-300 shadow-lg transform rotate-180 hover:scale-105 active:scale-95 cursor-pointer animate-bounce z-20"
                     >
-                        <span className="font-bold text-xs sm:text-sm uppercase tracking-wider text-white">Roll</span>
+                        <span className="font-bold text-xs sm:text-sm md:text-base lg:text-xl uppercase tracking-wider text-white">Roll</span>
                     </div>
                 ) : (
                     <div
                         onClick={() => handleReady(1)}
-                        className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full flex flex-col items-center justify-center border-2 sm:border-4 shadow-lg cursor-pointer transform rotate-180 hover:scale-105 active:scale-95 transition-all
+                        className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full flex flex-col items-center justify-center border-2 sm:border-4 shadow-lg cursor-pointer transform rotate-180 hover:scale-105 active:scale-95 transition-all
                   ${state.playersReady[1] ? 'bg-green-600 border-green-400 text-white' : 'bg-amber-500 border-amber-300 text-white animate-pulse shadow-[0_0_15px_rgba(245,158,11,0.6)]'}
                 `}
                     >
-                        <span className="font-bold text-[10px] sm:text-sm uppercase">Ready</span>
-                        {state.playersReady[1] && <span className="text-xl leading-none mt-1">✓</span>}
+                        <span className="font-bold text-[10px] sm:text-sm md:text-base lg:text-xl uppercase">Ready</span>
+                        {state.playersReady[1] && <span className="text-xl md:text-3xl leading-none mt-1">✓</span>}
                     </div>
                 )}
             </div>
@@ -90,23 +90,23 @@ export const DiceTray = () => {
             </div>
 
             {/* Player 1 Controls */}
-            <div className="flex flex-col gap-2 items-center">
+            <div className="flex flex-col gap-1 sm:gap-2 items-center">
                 {currentPhase === 'ROLL' && activePlayerIndex === 0 ? (
                     <div
                         onClick={handleRoll}
-                        className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-green-500 flex flex-col items-center justify-center border-2 sm:border-4 border-green-300 shadow-lg transform hover:scale-105 active:scale-95 cursor-pointer animate-bounce"
+                        className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-green-500 flex flex-col items-center justify-center border-2 sm:border-4 border-green-300 shadow-lg transform hover:scale-105 active:scale-95 cursor-pointer animate-bounce"
                     >
-                        <span className="font-bold text-xs sm:text-sm uppercase tracking-wider text-white">Roll</span>
+                        <span className="font-bold text-xs sm:text-sm md:text-base lg:text-xl uppercase tracking-wider text-white">Roll</span>
                     </div>
                 ) : (
                     <div
                         onClick={() => handleReady(0)}
-                        className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full flex flex-col items-center justify-center border-2 sm:border-4 shadow-lg cursor-pointer transform hover:scale-105 active:scale-95 transition-all
+                        className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full flex flex-col items-center justify-center border-2 sm:border-4 shadow-lg cursor-pointer transform hover:scale-105 active:scale-95 transition-all
               ${state.playersReady[0] ? 'bg-green-600 border-green-400 text-white' : 'bg-amber-500 border-amber-300 text-white animate-pulse shadow-[0_0_15px_rgba(245,158,11,0.6)]'}
             `}
                     >
-                        <span className="font-bold text-[10px] sm:text-sm uppercase tracking-wider">Ready</span>
-                        {state.playersReady[0] && <span className="text-xl leading-none mt-1">✓</span>}
+                        <span className="font-bold text-[10px] sm:text-sm md:text-base lg:text-xl uppercase tracking-wider">Ready</span>
+                        {state.playersReady[0] && <span className="text-xl md:text-3xl leading-none mt-1">✓</span>}
                     </div>
                 )}
             </div>
@@ -127,7 +127,7 @@ const dieColors: Record<string, string> = {
 
 const Die = ({ value, color, disabled = false, rolling = false, delay = '' }: { value: number, color: string, disabled?: boolean, rolling?: boolean, delay?: string }) => {
     return (
-        <div className={`w-10 h-10 sm:w-16 sm:h-16 rounded-md sm:rounded-xl shadow-md border-b-2 sm:border-b-4 flex items-center justify-center font-black text-2xl sm:text-5xl relative transition-transform duration-75
+        <div className={`w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-md sm:rounded-xl md:rounded-2xl shadow-md border-b-2 sm:border-b-4 md:border-b-8 flex items-center justify-center font-black text-2xl sm:text-5xl md:text-6xl lg:text-7xl relative transition-transform duration-75
       ${dieColors[color]}
       ${disabled ? 'opacity-30 grayscale' : ''}
       ${rolling ? `animate-ping scale-110 ${delay}` : ''}

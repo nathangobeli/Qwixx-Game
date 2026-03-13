@@ -48,7 +48,7 @@ export const Row = ({ playerIndex, color, rowState }: RowProps) => {
                         <div
                             key={num}
                             onClick={() => handleBoxClick(num)}
-                            className={`flex-1 rounded flex items-center justify-center font-bold text-base sm:text-2xl shadow-inner border border-black/10 transition-colors
+                            className={`flex-1 rounded flex items-center justify-center font-bold text-base sm:text-2xl md:text-3xl lg:text-4xl shadow-inner border border-black/10 transition-colors
                 ${isMarked ? 'bg-black/80 text-white' : (canMark ? 'bg-white/90 hover:bg-white cursor-pointer active:scale-95' : 'bg-white/50 opacity-50')}
               `}
                         >
@@ -57,7 +57,7 @@ export const Row = ({ playerIndex, color, rowState }: RowProps) => {
                     );
                 })}
                 {/* The Lock Box */}
-                <div className={`w-6 sm:w-10 ml-0.5 rounded-full flex items-center justify-center font-bold text-base sm:text-2xl shadow-inner border border-black/10
+                <div className={`w-6 sm:w-10 md:w-14 lg:w-16 ml-0.5 rounded-full flex items-center justify-center font-bold text-base sm:text-2xl md:text-3xl lg:text-4xl shadow-inner border border-black/10
             ${isColorLocked ? 'bg-black/80 text-white' : 'bg-white/90'}
         `}>
                     {isColorLocked ? 'X' : '🔒'}
